@@ -57,9 +57,9 @@ print(testx.shape)
 print(testy.shape)
 
 trainx = torch.from_numpy(trainx)
-trainy = torch.from_numpy(trainy)
+trainy = torch.from_numpy(trainy).type(torch.long)
 testx = torch.from_numpy(testx)
-testy = torch.from_numpy(testy)
+testy = torch.from_numpy(testy).type(torch.long)
 
 train_dataset = torchdata.TensorDataset(trainx, trainy)
 test_dataset = torchdata.TensorDataset(testx, testy)
