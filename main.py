@@ -11,6 +11,8 @@ from CnnModel import CnnModel
 
 model_type = 'dense'
 
+print(model_type)
+
 model = DenseModel(100)
 if model_type != 'dense':
     model = CnnModel(100)
