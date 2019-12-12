@@ -9,7 +9,7 @@ from DenseModel import DenseModel
 from CnnModel import CnnModel
 
 
-model_type = 'cnn'
+model_type = 'dense'
 
 model = DenseModel(100)
 if model_type != 'dense':
@@ -38,7 +38,7 @@ test_data_length = data.shape[0] - train_data_length
 x = data.drop(columns=['diagnosis']).values.astype(np.float32)
 eye = torch.eye(2)
 y = data['diagnosis'].values
-y = np.where(y == 'M', 1, 0).astype(np.int)
+y = np.where(y == 'M', 1, 0).astype(np.long)
 
 sample = random.sample(range(data.shape[0]), train_data_length)
 not_sample = [i for i in range(data.shape[0]) if i not in sample]
