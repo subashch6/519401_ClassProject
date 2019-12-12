@@ -10,6 +10,7 @@ from CnnModel import CnnModel
 
 
 model_type = 'dense'
+use_cuda = False
 
 print(model_type)
 
@@ -19,7 +20,7 @@ if model_type != 'dense':
 
 device = torch.device('cpu')
 
-if torch.cuda.is_available():
+if torch.cuda.is_available() and use_cuda:
     device = torch.device("cuda")
     model = model.to(device)
 
